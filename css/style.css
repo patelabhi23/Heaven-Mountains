@@ -1,0 +1,595 @@
+/*======================================
+
+        Default Values
+
+Fonts: Roboto
+
+Colors:
+1. Forest Blue: #0a3d62;
+2. White: #fff;
+3. Black: #000;
+4. Red: #ff0000;
+
+======================================*/
+
+
+
+/*------------------------------
+        Basic setup
+------------------------------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #111;
+    font-family: 'Roboto', sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+
+
+
+/*------------------------------
+            Header
+------------------------------*/
+
+.main-nav {
+    height: 10vh;
+}
+
+.video-container {
+      width: 100%;
+      height: 90vh;
+      overflow: hidden;
+}
+
+video {
+      object-fit: cover;
+      width: 100vw;
+      height: 90vh;
+}
+
+.video-container::after {
+      content: "";
+      position: absolute;
+      top: 10vh;
+      left: 0;
+      width: 100%;
+      height: 90vh;
+      background: #0a3d62;
+      opacity: 0.8;
+}
+
+.main-nav img {
+    height: 9vh;
+    width: auto;
+}
+
+.main-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu a {
+    margin: 0 45px;
+    color: #0a3d62;
+    font-size: 20px;
+}
+
+.nav-menu li {
+    margin-top: 10px;
+}
+
+.nav-menu li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ff0000;
+    transition: all .3s ease;
+    margin-top: 10px;
+}
+
+.nav-menu li:hover::after {
+    width: 100%;
+}
+
+
+/*Mobile menu*/
+.open-button {
+	width: 30px;
+	height: 30px;
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+	position: absolute;
+	cursor: pointer;
+	border-bottom: 0;
+	top: 25px;
+	right: 40px;
+	z-index: 9999;
+	border-bottom: 0;
+    
+}
+
+.open-button span {
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 100%;
+	background-color: #0a3d62;
+	border-radius: 2px;
+	opacity: 1;
+	left: 0;
+	transform: rotate(0deg);
+	transition: .25s ease-in-out;
+    display: none;
+}
+
+.open-button span:nth-child(1) {
+	top: 0px;
+	transform-origin: left center;
+}
+
+.open-button span:nth-child(2) {
+	top: 10px;
+	transform-origin: left center;
+}
+
+.open-button span:nth-child(3) {
+	top: 20px;
+	transform-origin: left center;
+}
+
+.open-button.open span:nth-child(1) {
+	transform: rotate(45deg);
+	top: -3px;
+	left: 8px;
+}
+
+.open-button.open span:nth-child(2) {
+	width: 0%;
+	opacity: 0;
+}
+
+.open-button.open span:nth-child(3) {
+	transform: rotate(-45deg);
+	top: 19px;
+	left: 8px;
+}
+
+
+.centered-elements {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centered-elements h1 {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.centered-elements h1 span {
+    font-weight: 700;
+    color: #0a3d62;
+}
+
+.centered-buttons {
+    margin-top: 50px;
+}
+
+.centered-buttons a {
+    font-size: 20px;
+    color: #fff;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 30px;
+    border: 2px solid #fff;  
+    transition: all .3s ease;
+}
+
+.centered-buttons a:hover {
+    background-color: #0a3d62;
+    border-radius: 10px;
+}
+
+#arrow-down {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    margin-left: -13px;
+    z-index: 9999;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    animation: animatedArrow 2s infinite;
+    cursor: pointer;
+}
+
+@keyframes animatedArrow {
+  0% {
+    bottom: 40px;
+  }
+  30% {
+    bottom: 25px;
+    border-color: #0a3d62;
+  }
+  100% {
+    bottom: 40px;
+  }
+}
+
+
+
+/*------------------------------
+           About Us
+------------------------------*/
+
+.about-us {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.about-us img {
+    max-width: 500px;
+}
+
+.about-container {
+    margin: 0 60px
+}
+
+.about-container h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+    color: #0a3d62;
+    display: block;
+}
+
+.about-container h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 2px;
+    background: #ff0000;
+    margin-top: 10px;
+}
+
+.about-container p {
+    line-height: 1.7;
+    width: 80%
+}
+
+
+/*------------------------------
+           Quoute
+------------------------------*/
+.quoute-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    background: #ff0f0f;
+    background: linear-gradient(0deg, rgba(10, 61, 98, 0.8), rgba(0, 0, 0, 1)), url(../img/img2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.quoute-section p {
+    padding: 100px 0;
+    color: #fff;
+    font-size: 25px;
+    font-style: italic;
+}
+
+
+
+/*------------------------------
+           Activities
+------------------------------*/
+.activities {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 120px 0;
+    flex-wrap: wrap;
+}
+
+.activity-container {
+    width: 21%;
+}
+
+.image-container {
+    width: 100%;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    color: #FFF;
+    transition: all .3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.image-container:hover .overlay {
+    visibility: visible;
+    background:  rgba(10, 61, 98, 0.95);
+}
+
+.activities h3 {
+    margin: 20px 0;
+    font-size: 25px;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    border-left: 4px solid #ff0000;   
+    color: #0a3d62;
+}
+
+.activities p {
+    text-align: justify;
+}
+
+
+
+/*------------------------------
+           Gallery
+------------------------------*/
+.gallery {
+    display: flex;
+    margin-bottom: 120px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.gallery div {
+    overflow: hidden;
+    flex: 1 0 25%; 
+    cursor: pointer;
+    background-color: #0a3d62;
+
+}
+
+.gallery img {
+    transition: all .5s ease;
+    height: 100%;
+    width: 100%;
+    opacity: .4;
+}
+
+.gallery img:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+
+
+/*------------------------------
+           Contact
+------------------------------*/
+.contact {
+    position: relative;
+    overflow: hidden;
+}
+
+#map {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#google-maps {
+    width: 140%;
+    height: 100%;
+}
+
+.gm-style-mtc {
+    display: none;
+}
+
+
+/* contact form */
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin-left: 50px;
+    padding: 60px 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    box-shadow: 1px 1px 30px -3px #000;
+    background-color: #fff;
+    transition: box-shadow .3s ease-in;
+}
+
+.contact-us:hover {
+    box-shadow: 1px 1px 60px -3px #000;
+}
+
+.contact-us form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us h2 {
+    font-size: 27px;
+    text-transform: uppercase;
+    color: #0a3d62;
+}
+
+.contact-us p {
+    color: #999;
+    margin-top: 10px;
+}
+
+.contact-us form label {
+    text-transform: uppercase;
+    margin-bottom: 7px;
+    margin-top: 25px;
+    color: #666;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.contact-us form button {
+    font-size: 18px;
+    color: #0a3d62;
+    padding: 10px;
+    font-weight: 300;
+    margin-top: 35px;
+    border: 2px solid #0a3d62;  
+    transition: all .3s ease;
+    background-color: #fff;
+    width: 150px;
+    cursor: pointer;
+}
+
+.contact-us form button:hover {
+    background-color: #0a3d62;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.contact-us form input {
+    padding: 7px 10px;
+    border: 1px solid #999;
+    border-radius: 15px;
+    font-size: 17px;
+    color: #999;
+}
+
+.contact-us form input:focus {
+    outline: none;
+    box-shadow: 1px 1px 15px -3px #999;
+    border-color: #ff0000;    
+}
+
+.contact-us form textarea {
+    padding: 7px 10px;
+    border: 1px solid #999;
+    border-radius: 15px;
+    font-size: 17px;
+    color: #999;
+    resize: none;
+}
+
+.contact-us form textarea:focus {
+    outline: none;
+    box-shadow: 1px 1px 15px -3px #999;
+    border-color: #ff0000;    
+}
+
+
+
+/*------------------------------
+           Back to top
+------------------------------*/
+.backtotop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: block;
+    cursor: pointer;
+    transition: all .5s linear;
+    width: 50px;
+    height: 50px;
+    background-color: #0a3d62;
+    border-radius: 50%;
+    box-shadow: 1px 1px 15px -3px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backtotop div {
+   border: solid #fff;
+   border-width: 0 3px 3px 0;
+   display: inline-block;
+   padding: 6px;
+   transform: rotate(-135deg);
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
